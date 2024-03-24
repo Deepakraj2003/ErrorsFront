@@ -1,0 +1,55 @@
+.whole{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+}
+.question{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center ;
+    margin-left: 1.5%;
+}
+.textarea{
+    width: 70%;
+    height: 60px;
+    padding: 10px;
+    font-size:16px;
+    border: 1px solid #ccc;
+    border-radius:5px;
+    resize: vertical;
+    margin-right: 10px;
+}
+
+.button{
+    padding:1.8% 5%;
+    font-size: 10px;
+    background: blue;
+}
+
+.card-container{
+    margin-left: 1%;
+    width: 90%;
+}
+.card{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px; 
+    margin-bottom: 10px ;
+}
+
+@media (max-width: 768px){
+    .textarea{
+        height:50px;
+        width: 100%;
+    }
+    .whole{
+        margin-right: 0%;
+    }
+    .button{
+        padding:auto;
+    }
+    .card-container{
+        width:95%;
+    }
+}
