@@ -6,12 +6,15 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MapsUgcIcon from '@mui/icons-material/MapsUgc';
 import { useParams } from 'react-router';
 import './Question.css'
+import { Button } from '@mui/material';
 
 function Details({ question }) {
   const { id } = useParams();
   const [details, setDetails] = useState({});
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
+  const [like, setLike] = useState(0);
+  const [dislike, setDislike] = useState(0);
 
   // Fetch question details when component mounts
   useEffect(() => {
@@ -79,10 +82,13 @@ function Details({ question }) {
         <div>
           {comments.map((comment, index) => (
             <div key={index} style={{ border: '1px solid #ccc', borderRadius: '5px', padding: '10px', marginBottom: '10px', whiteSpace: 'pre-line' }}>
-              <p style={{ margin: 0 }}>{comment}</p>
+              <p style={{ margin: 0 }}>{comment}</p><br></br>
+              <Button onClick={()=>{setLike(like+1)}}>👍{like}</Button>
+              <Button onClick={()=>{setDislike(dislike+1)}}>👎{dislike}</Button>
             </div>
           ))}
         </div>
+        
       </div>
       <div  style={{ position: 'fixed', bottom: '0', left: '0', width: '100%', backgroundColor: '#fff', padding: '10px', borderTop: '1px solid #ccc', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
         <textarea

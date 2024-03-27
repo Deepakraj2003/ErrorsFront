@@ -177,7 +177,7 @@ export default function CombinedAppBarDrawer() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-          <Button color="inherit" style={{ right:'0'}}>Login</Button>
+          <Button color="inherit" style={{ right:'0'}} onClick={()=>navigate(`/`)}>Login</Button>
         </Toolbar>
       </AppBar>
       <Drawer variant="permanent" open={open}>
@@ -192,11 +192,13 @@ export default function CombinedAppBarDrawer() {
             <ListItem key={text} disablePadding >
               <ListItemButton >
                 <ListItemIcon>
-                  {index=== 0 ? <HomeIcon onClick={()=>navigate(`/`)} /> : null}
+                  {index=== 0 ? <HomeIcon onClick={()=>navigate(`/home`)} /> : null}
                   {index===1 ? <QueueIcon onClick={()=>navigate(`/questions`)}/> : null}
                   {index=== 2 ? <MoreIcon onClick={()=>navigate(`/about`)}/> : null}
                 </ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText primary={text}>{ text==='Home' ? <HomeIcon onClick={()=>navigate(`/home`)} /> : null}
+                  {text==='AddQuestions'? <QueueIcon onClick={()=>navigate(`/questions`)}/> : null}
+                  {text=== 'About' ? <MoreIcon onClick={()=>navigate(`/about`)}/> : null} </ListItemText>
               </ListItemButton>
             </ListItem>
           ))}
