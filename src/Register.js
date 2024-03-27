@@ -17,7 +17,7 @@ export default function Register() {
 
     const register=(values)=>{
       console.log(values);
-      fetch(`http://localhost:4000/register`,{method: 'POST', 
+      fetch(`https://errorsback.vercel.app/register`,{method: 'POST', 
       body: JSON.stringify(values),
       headers:{"Content-Type": 'application/json'}
     })

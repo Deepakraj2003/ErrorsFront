@@ -14,7 +14,7 @@ export default function Login() {
   const navigate=useNavigate();
   
   const login=async(values)=>{
-    let data=await fetch(`http://localhost:4000/login`,{
+    let data=await fetch(`https://errorsback.vercel.app/login`,{
       method: 'POST',
       body: JSON.stringify(values),
       headers: {'Content-Type': 'application/json'},
